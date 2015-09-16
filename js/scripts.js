@@ -22,6 +22,19 @@ $(document).ready(function() {
     var newRoll = testPlayer.rollDie();
 
     $("#turn-score").text(testPlayer.turnScore);
+    $("#turn-score").show();
     $("#roll-score").text(newRoll);
+    $("#roll-score").show();
+  });
+
+  $("#hold").click(function() {
+    event.preventDefault();
+
+    testPlayer.playerScore += testPlayer.turnScore;
+    testPlayer.turnScore = 0;
+
+    $("#player-score").text(testPlayer.playerScore);
+    $("#turn-score").hide();
+    $("#roll-score").hide();
   });
 });
