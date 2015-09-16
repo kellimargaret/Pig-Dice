@@ -2,6 +2,10 @@
   display: none;
 }
 
+#winner-board {
+  display: none;
+}
+
 #turn-score {
   display: none;
 }
