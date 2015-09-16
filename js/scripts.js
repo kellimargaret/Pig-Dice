@@ -17,7 +17,7 @@ Player.prototype.rollDie = function() {
 $(document).ready(function() {
   var testPlayer = new Player("Sven", 0, 0);
 
-  $("#roll").click(function() {
+  $(".roll").click(function() {
     event.preventDefault();
 
     var newRoll = testPlayer.rollDie();
@@ -28,7 +28,7 @@ $(document).ready(function() {
     $("#roll-score").show();
   });
 
-  $("#hold").click(function() {
+  $(".hold").click(function() {
     event.preventDefault();
 
     testPlayer.playerScore += testPlayer.turnScore;

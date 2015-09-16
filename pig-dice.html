@@ -13,9 +13,19 @@
 
       <button type="submit" class="btn btn-danger">Start</button>
       <h3>Turn score: <span id="turn-score"></span></h3>
-      <h3>Player score: <span id="player-score"></span></h3>
-      <button type="submit" id="roll" class="btn btn-success">Roll</button>
-      <button type="submit" id="hold" class="btn btn-danger">Die</button>
+      <div class="row">
+        <div class="col-md-6">
+          <h3>Player 1 score: <span id="player-score"></span></h3>
+          <button type="submit" class="btn btn-success roll">Roll</button>
+          <button type="submit" class="btn btn-danger hold">Die</button>
+        </div>
+        <div class="col-md-6">
+          <h3>Player 2 score: <span id="player-score"></span></h3>
+          <button type="submit" class="btn btn-success roll">Roll</button>
+          <button type="submit" class="btn btn-danger hold">Die</button>
+        </div>
+      </div>
+
       <h3>Roll:<span id="roll-score"></span></h3>
     </div>
   </body>
