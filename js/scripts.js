@@ -20,6 +20,24 @@ function Game(turn, player1, player2) {
   this.player2 = player2;
 }
 
+//we can probably do this in other places
+Game.prototype.switchPlayers = function() {
+  if (this.turn ===1) {
+    this.turn = 2;
+    $("#roll-player1").hide();
+    $("#hold-player1").hide();
+    $("#roll-player2").show();
+    $("#hold-player2").show();
+  } else {
+    this.turn = 1;
+    $("#roll-player2").hide();
+    $("#hold-player2").hide();
+    $("#roll-player1").show();
+    $("#hold-player1").show();
+  }
+}
+
+
 $(document).ready(function() {
   var player1;
   var player2;
@@ -63,19 +81,7 @@ $(document).ready(function() {
     var newRoll = currentPlayer.rollDie();
 
     if(newRoll === 1) {
-      if (newGame.turn ===1) {
-        newGame.turn = 2;
-        $("#roll-player1").hide();
-        $("#hold-player1").hide();
-        $("#roll-player2").show();
-        $("#hold-player2").show();
-      } else {
-        newGame.turn = 1;
-        $("#roll-player2").hide();
-        $("#hold-player2").hide();
-        $("#roll-player1").show();
-        $("#hold-player1").show();
-      }
+      newGame.switchPlayers();
     }
 
     $("#turn-score").text(currentPlayer.turnScore);
