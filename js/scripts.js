@@ -46,6 +46,9 @@ $(document).ready(function() {
 
     $("#player1-score").text(player1.playerScore);
     $("#player2-score").text(player2.playerScore);
+
+    $("#roll-player2").hide();
+    $("#hold-player2").hide();
   });
 
   $(".roll").click(function() {
@@ -93,7 +96,7 @@ $(document).ready(function() {
       $("#hold-player1").hide();
       $("#roll-player2").show();
       $("#hold-player2").show();
-      if (player1.playerScore >= 5) {
+      if (player1.playerScore >= 15) {
         $("#game-board").hide();
         $("#winner-board").show();
         $("#winner-name").text(player1.playerName.toUpperCase());
@@ -109,7 +112,7 @@ $(document).ready(function() {
       $("#hold-player2").hide();
       $("#roll-player1").show();
       $("#hold-player1").show();
-      if (player2.playerScore >= 5) {
+      if (player2.playerScore >= 15) {
         $("#game-board").hide();
         $("#winner-board").show();
         $("#winner-name").text(player2.playerName.toUpperCase());
@@ -120,5 +123,33 @@ $(document).ready(function() {
 
     $("#turn-score").hide();
     $("#roll-score").hide();
+  });
+
+  $("#play-again").click(function() {
+    event.preventDefault();
+
+    player1.playerScore = 0;
+    player2.playerScore = 0;
+
+    $("#player1-score").text(player1.playerScore);
+    $("#player2-score").text(player2.playerScore);
+
+    if (newGame.turn === 1) {
+      $("#roll-player1").show();
+      $("#hold-player1").show();
+      $("#roll-player2").hide();
+      $("#hold-player2").hide();
+    } else {
+      $("#roll-player2").show();
+      $("#hold-player2").show();
+      $("#roll-player1").hide();
+      $("#hold-player1").hide();
+    }
+
+    $("#winner-board").hide();
+    $("#game-board").show();
+
+
+
   });
 });
