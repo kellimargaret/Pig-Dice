@@ -3,6 +3,10 @@ function Player(playerName, playerScore) {
   this.playerScore = playerScore;
 }
 
-function dieRoll() {
-  return Math.floor(Math.random() * 6) + 1;
+Player.prototype.rollDie = function() {
+  var dieRoll = Math.floor(Math.random() * 6) + 1;
+  debugger;
+  if (dieRoll !== 1) {
+    return this.playerScore += dieRoll;
+  }
 }

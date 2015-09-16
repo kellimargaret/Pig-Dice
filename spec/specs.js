@@ -4,10 +4,20 @@ describe("Player", function() {
     expect(testPlayer.playerName).to.equal("Sven");
     expect(testPlayer.playerScore).to.equal(0);
   });
-});
 
-// describe("rollDie", function() {
-//   it("returns a random number between 1 and 6", function() {
-//     expect(dieRoll()).to.equal();
-//   });
-// });
+  //will work sometimes, because if random roll = 1 it will be false
+  it("updates score for player", function() {
+    var testPlayer = new Player("Sven", 0);
+    testPlayer.rollDie();
+    var randomTest = testPlayer.playerScore < 7 && testPlayer.playerScore > 0;
+    expect(randomTest).to.equal(true);
+  });
+
+  //will work sometimes, because if random roll = 1 it won't update score
+  it("if player rolls '1' no points are added", function() {
+    var testPlayer = new Player("Sven", 0);
+    testPlayer.rollDie();
+    expect(testPlayer.playerScore).to.equal(0);
+  })
+
+});
