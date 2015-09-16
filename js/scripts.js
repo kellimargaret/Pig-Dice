@@ -20,10 +20,13 @@ function Game(turn, player1, player2) {
   this.player2 = player2;
 }
 
+
+
 $(document).ready(function() {
   var player1;
   var player2;
   var newGame;
+  var currentPlayer;
 
   $("#start-button").click(function() {
     event.preventDefault();
@@ -35,17 +38,18 @@ $(document).ready(function() {
 
     newGame = new Game(1, player1, player2);
 
-
     $("#game-form").hide();
     $("#game-board").show();
 
     $("#player1-display-name").text(player1Name);
     $("#player2-display-name").text(player2Name);
+
+    $("#player1-score").text(player1.playerScore);
+    $("#player2-score").text(player2.playerScore);
   });
 
   $(".roll").click(function() {
     event.preventDefault();
-    var currentPlayer;
 
     if (newGame.turn === 1) {
       currentPlayer = player1;
@@ -80,10 +84,26 @@ $(document).ready(function() {
   $(".hold").click(function() {
     event.preventDefault();
 
-    testPlayer.playerScore += testPlayer.turnScore;
-    testPlayer.turnScore = 0;
+    if (newGame.turn === 1) {
+      newGame.turn = 2;
+      player1.playerScore += player1.turnScore;
+      player1.turnScore = 0;
+      $("#player1-score").text(player1.playerScore);
+      $("#roll-player1").hide();
+      $("#hold-player1").hide();
+      $("#roll-player2").show();
+      $("#hold-player2").show();
+    } else {
+      newGame.turn = 1;
+      player2.playerScore += player2.turnScore;
+      player2.turnScore = 0;
+      $("#player2-score").text(player2.playerScore);
+      $("#roll-player2").hide();
+      $("#hold-player2").hide();
+      $("#roll-player1").show();
+      $("#hold-player1").show();
+    }
 
-    $("#player-score").text(testPlayer.playerScore);
     $("#turn-score").hide();
     $("#roll-score").hide();
   });
