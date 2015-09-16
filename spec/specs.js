@@ -14,10 +14,18 @@ describe("Player", function() {
   });
 
   //will work sometimes, because if random roll = 1 it won't update score
-  it("if player rolls '1' no points are added", function() {
+  it("will not update score if player rolls 1", function() {
     var testPlayer = new Player("Sven", 0);
     testPlayer.rollDie();
     expect(testPlayer.playerScore).to.equal(0);
   })
 
+  //player rolls die twice (no 1's) and then holds
+  // it("will update player score if multiple rolls of 2-6", function() {
+  //   var testPlayer = new Player("Sven", 0);
+  //   testPlayer.rollDie();
+  //   testPlayer.rollDie();
+  //   var randomTest = testPlayer.playerScore >= 4 && testPlayer.playerScore <= 12;
+  //   expect(testPlayer.playerScore).to.equal(true);
+  // });
 });
