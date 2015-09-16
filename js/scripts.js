@@ -6,10 +6,11 @@ function Player(playerName, playerScore, turnScore) {
 
 Player.prototype.rollDie = function() {
   var dieRoll = Math.floor(Math.random() * 6) + 1;
-  if (dieRoll !== 1) {
-    this.turnScore += dieRoll;
+  if (dieRoll === 1) {
+    this.turnScore = 0;
     return dieRoll;
   }
+  this.turnScore += dieRoll;
   return dieRoll;
 }
 
