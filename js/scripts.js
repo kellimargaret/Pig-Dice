@@ -20,8 +20,6 @@ function Game(turn, player1, player2) {
   this.player2 = player2;
 }
 
-
-
 $(document).ready(function() {
   var player1;
   var player2;
@@ -47,6 +45,8 @@ $(document).ready(function() {
     $("#player1-score").text(player1.playerScore);
     $("#player2-score").text(player2.playerScore);
 
+    $("#roll-player1").show();
+    $("#hold-player1").show();
     $("#roll-player2").hide();
     $("#hold-player2").hide();
   });
@@ -148,8 +148,15 @@ $(document).ready(function() {
 
     $("#winner-board").hide();
     $("#game-board").show();
+  });
 
+  $("#new-game").click(function() {
+    event.preventDefault();
 
+    $("#winner-board").hide();
+    $("#game-form").show();
 
+    $("input#name-player1").val("");
+    $("input#name-player2").val("");
   });
 });
