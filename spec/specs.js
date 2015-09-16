@@ -5,3 +5,9 @@ describe("Player", function() {
     expect(testPlayer.playerScore).to.equal(0);
   });
 });
+
+// describe("rollDie", function() {
+//   it("returns a random number between 1 and 6", function() {
+//     expect(dieRoll()).to.equal();
+//   });
+// });
