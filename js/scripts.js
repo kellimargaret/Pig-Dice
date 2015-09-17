@@ -130,7 +130,7 @@ $(document).ready(function() {
       $("#hold-player1").hide();
       $("#roll-player2").show();
       $("#hold-player2").show();
-      if (player1.playerScore >= 3) {
+      if (player1.playerScore >= 100) {
         $("#game-board").hide();
         $("#winner-board").show();
         $("#winner-name").text(player1.playerName.toUpperCase());
@@ -146,7 +146,7 @@ $(document).ready(function() {
       $("#hold-player2").hide();
       $("#roll-player1").show();
       $("#hold-player1").show();
-      if (player2.playerScore >= 3) {
+      if (player2.playerScore >= 100) {
         $("#game-board").hide();
         $("#winner-board").show();
         $("#winner-name").text(player2.playerName.toUpperCase());
