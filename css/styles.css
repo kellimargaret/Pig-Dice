@@ -1,15 +1,19 @@
+@font-face {
+  font-family: 'MARSNEVENEKSK';
+  src: url("fonts/MARSNEVENEKSK.otf")
+  }
+
 body {
-  background-image: url("img/alley.jpg");
+  /*background-image: url("img/alley.jpg");*/
   background-repeat: no-repeat;
   background-size: cover;
-}
-
-#cardboard {
-  -webkit-transform: rotate(90deg);
+  font-family: 'MARSNEVENEKSK', arial, serif;
 }
 
 #game-board {
   display: none;
+  text-align: center;
+  padding: 10px, 0;
 }
 
 #winner-board {
@@ -18,6 +22,12 @@ body {
 
 #dice-board {
   max-width: 100%;
+  text-align: center;
+  padding: 10px;
+  margin: 5px;
+}
+
+#game-form {
   text-align: center;
 }
 
@@ -32,32 +42,38 @@ body {
 
 #dice-1 {
   display: none;
-  max-width: 70px;
+  max-height: 70px;
+  max-width: auto;
 }
 
 #dice-2 {
   display: none;
-  max-width: 70px;
+  max-height: 70px;
+  max-width: auto;
 }
 
 #dice-3 {
   display: none;
-  max-width: 70px;
+  max-height: 70px;
+  max-width: auto;
 }
 
 #dice-4 {
   display: none;
-  max-width: 70px;
+  max-height: 70px;
+  max-width: auto;
 }
 
 #dice-5 {
   display: none;
-  max-width: 70px;
+  max-height: 70px;
+  max-width: auto;
 }
 
 #dice-6 {
   display: none;
-  max-width: 70px;
+  max-height: 70px;
+  max-width: auto;
 }
 
 /*HEADER*/
@@ -84,4 +100,24 @@ body {
   /*margin-left: 56px;*/
   z-index: 1;
   position: relative;
+}
+
+#start-button {
+  text-align: center;
+}
+
+h1 {
+  font-size: 55px;
+}
+
+.form-group {
+  display: inline-block;
+}
+
+input[type="text"] {
+    font-size:50px;
+    border-style: none;
+    border-bottom: solid;
+    text-align: center;
+    width: 200px;
 }

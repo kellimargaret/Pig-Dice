@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" type="text/css">
    <link href="css/styles.css" rel="stylesheet" type="text/css">
    <link href="css/animate.css" rel="stylesheet" type="text/css">
+   <link href="css/fonts/MARSNEVENEKSK.otf" rel="stylesheet" type="text/css">
    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
    <script src="js/scripts.js"></script>
-    <title>Roll or Die</title>
+    <title>Alley Pig Dice</title>
   </head>
   <body>
     <div class="container">
@@ -17,20 +18,22 @@
 
       <div id="game-form">
         <form id="name-entry">
-          <div class="form-group">
-            <label for="name-player1">Player One's name: </label>
-            <input type="text" id="name-player1" placeholder="Player One's Name">
+          <div class="row">
+            <div class="form-group col-md-6">
+              <label for="name-player1"><h1>Player One: </h1></label><br>
+              <input type="text" id="name-player1" placeholder=" Tupac ">
+            </div>
+            <div class="form-group col-md-6">
+              <label for="name-player2"><h1>Player Two: </h1></label><br>
+              <input type="text" id="name-player2" placeholder=" Biggie">
+            </div>
           </div>
-          <div class="form-group">
-            <label for="name-player2">Player Two's name: </label>
-            <input type="text" id="name-player2" placeholder="Player Two's Name">
-          </div>
-          <button type="submit" id="start-button" class="btn btn-danger">Start</button>
+          <button type="submit" id="start-button" class="btn btn-danger btn-lg">Start</button>
         </form>
       </div>
 
       <div id="game-board">
-        <img src="css/img/cardboard.png" id="cardboard">
+        <!-- <img src="css/img/cardboard.png" id="cardboard"> -->
         <div id="dice-board">
           <img src="css/img/dice-1.png" id="dice-1">
           <img src="css/img/dice-2.png" id="dice-2">
@@ -45,12 +48,12 @@
           <div class="col-md-6">
             <h3><span id="player1-display-name"></span>'s score: <span id="player1-score"></span></h3>
             <button type="submit" id="roll-player1" class="btn btn-success roll">Roll</button>
-            <button type="submit" id="hold-player1" class="btn btn-danger hold">Die</button>
+            <button type="submit" id="hold-player1" class="btn btn-danger hold">Hold</button>
           </div>
           <div class="col-md-6">
             <h3><span id="player2-display-name"></span>'s score: <span id="player2-score"></span></h3>
             <button type="submit" id="roll-player2" class="btn btn-success roll">Roll</button>
-            <button type="submit" id="hold-player2" class="btn btn-danger hold">Die</button>
+            <button type="submit" id="hold-player2" class="btn btn-danger hold">Hold</button>
           </div>
         </div>
       </div>
