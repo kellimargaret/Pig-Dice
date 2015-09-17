@@ -3,13 +3,17 @@
   <head>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" type="text/css">
    <link href="css/styles.css" rel="stylesheet" type="text/css">
+   <link href="css/animate.css" rel="stylesheet" type="text/css">
    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
    <script src="js/scripts.js"></script>
     <title>Roll or Die</title>
   </head>
   <body>
     <div class="container">
-      <h2><center>Are You Ready to <br><u>Roll or Die?</u></center></h2>
+      <div id="logo-header">
+        <img src="css/img/pig.png" id="pig-logo">
+        <br><img src="css/img/dice.png" id="dice-logo">
+      </div>
 
       <div id="game-form">
         <form id="name-entry">
@@ -26,8 +30,17 @@
       </div>
 
       <div id="game-board">
+        <img src="css/img/cardboard.png" id="cardboard">
+        <div id="dice-board">
+          <img src="css/img/dice-1.png" id="dice-1">
+          <img src="css/img/dice-2.png" id="dice-2">
+          <img src="css/img/dice-3.png" id="dice-3">
+          <img src="css/img/dice-4.png" id="dice-4">
+          <img src="css/img/dice-5.png" id="dice-5">
+          <img src="css/img/dice-6.png" id="dice-6">
+        </div>
         <h3><center>Turn score: <span id="turn-score"></span></center></h3>
-        <br><h3><center>Roll:<span id="roll-score"></span></center></h3>
+
         <div class="row">
           <div class="col-md-6">
             <h3><span id="player1-display-name"></span>'s score: <span id="player1-score"></span></h3>

@@ -37,6 +37,15 @@ Game.prototype.switchPlayers = function() {
   }
 }
 
+Game.prototype.hideDice = function() {
+  $("#dice-1").hide();
+  $("#dice-2").hide();
+  $("#dice-3").hide();
+  $("#dice-4").hide();
+  $("#dice-5").hide();
+  $("#dice-6").hide();
+}
+
 
 $(document).ready(function() {
   var player1;
@@ -72,6 +81,8 @@ $(document).ready(function() {
   $(".roll").click(function() {
     event.preventDefault();
 
+    newGame.hideDice();
+
     if (newGame.turn === 1) {
       currentPlayer = player1;
     } else {
@@ -80,14 +91,31 @@ $(document).ready(function() {
 
     var newRoll = currentPlayer.rollDie();
 
+
+    //dice not hiding fast enough!!!!
     if(newRoll === 1) {
       newGame.switchPlayers();
+      $("#dice-1").addClass('animated rollIn');
+      $("#dice-1").show();
+    } else if (newRoll === 2) {
+      $("#dice-2").addClass('animated rollIn');
+      $("#dice-2").show();
+    } else if (newRoll === 3) {
+      $("#dice-3").addClass('animated rollIn');
+      $("#dice-3").show();
+    } else if (newRoll === 4) {
+      $("#dice-4").addClass('animated rollIn');
+      $("#dice-4").show();
+    } else if (newRoll === 5) {
+      $("#dice-5").addClass('animated rollIn');
+      $("#dice-5").show();
+    } else if (newRoll === 6) {
+      $("#dice-6").addClass('animated rollIn');
+      $("#dice-6").show();
     }
 
     $("#turn-score").text(currentPlayer.turnScore);
     $("#turn-score").show();
-    $("#roll-score").text(newRoll);
-    $("#roll-score").show();
   });
 
   $(".hold").click(function() {
@@ -102,7 +130,7 @@ $(document).ready(function() {
       $("#hold-player1").hide();
       $("#roll-player2").show();
       $("#hold-player2").show();
-      if (player1.playerScore >= 15) {
+      if (player1.playerScore >= 30) {
         $("#game-board").hide();
         $("#winner-board").show();
         $("#winner-name").text(player1.playerName.toUpperCase());
@@ -118,7 +146,7 @@ $(document).ready(function() {
       $("#hold-player2").hide();
       $("#roll-player1").show();
       $("#hold-player1").show();
-      if (player2.playerScore >= 15) {
+      if (player2.playerScore >= 30) {
         $("#game-board").hide();
         $("#winner-board").show();
         $("#winner-name").text(player2.playerName.toUpperCase());
@@ -133,6 +161,8 @@ $(document).ready(function() {
 
   $("#play-again").click(function() {
     event.preventDefault();
+
+    newGame.hideDice();
 
     player1.playerScore = 0;
     player2.playerScore = 0;
@@ -158,6 +188,8 @@ $(document).ready(function() {
 
   $("#new-game").click(function() {
     event.preventDefault();
+
+    newGame.hideDice();
 
     $("#winner-board").hide();
     $("#game-form").show();

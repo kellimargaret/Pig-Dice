@@ -1,3 +1,13 @@
+body {
+  background-image: url("img/alley.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#cardboard {
+  -webkit-transform: rotate(90deg);
+}
+
 #game-board {
   display: none;
 }
@@ -6,10 +16,72 @@
   display: none;
 }
 
+#dice-board {
+  max-width: 100%;
+  text-align: center;
+}
+
 #turn-score {
   display: none;
 }
 
 #roll-score {
   display: none;
+}
+
+
+#dice-1 {
+  display: none;
+  max-width: 70px;
+}
+
+#dice-2 {
+  display: none;
+  max-width: 70px;
+}
+
+#dice-3 {
+  display: none;
+  max-width: 70px;
+}
+
+#dice-4 {
+  display: none;
+  max-width: 70px;
+}
+
+#dice-5 {
+  display: none;
+  max-width: 70px;
+}
+
+#dice-6 {
+  display: none;
+  max-width: 70px;
+}
+
+/*HEADER*/
+#logo-header {
+  text-align: center;
+  padding: 15px 0px;
+  margin: 5px; 5px;
+}
+
+#pig-logo {
+  max-width: 150px;
+  z-index: 2;
+  -moz-transform: scaleX(-1);
+        -o-transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+        filter: FlipH;
+        -ms-filter: "FlipH";
+}
+
+#dice-logo {
+  max-width: 250px;
+  margin-top: -55px;
+  /*margin-left: 56px;*/
+  z-index: 1;
+  position: relative;
 }
